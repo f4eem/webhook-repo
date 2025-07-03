@@ -9,7 +9,8 @@ load_dotenv()
 app = Flask(__name__)
 
 # MongoDB setup
-client = MongoClient(os.getenv("MONGO_URI"))
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
+client = MongoClient(MONGO_URI)
 db = client["webhookDB"]
 events_collection = db["events"]
 
