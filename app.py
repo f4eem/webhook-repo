@@ -83,7 +83,7 @@ def get_events():
         output.append(msg)
     return jsonify(output)
 
-# Minimal UI
+# Minimal User interface
 @app.route("/")
 def index():
     return render_template("index.html")
